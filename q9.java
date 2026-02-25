@@ -1,24 +1,40 @@
- class shape{
-    void area(int a ,int b){
-        System.out.println("AREA OF RECTANGLE "+ a*b);
-    }
-    void area(int x){
-        System.out.println("AREA OF "+x*x);
-    }
-    void area(double a,double b){
-        System.out.println("AREA OF TRIANGLE"+0.5*a*b);
+import java.util.Scanner;
 
-    }
-    
+class Employee {
+    int eno;
+    String ename;
+    double esalary;
 }
-    public class q9 {
-    public static void main(String args[]){
-        shape s=new shape();
-        s.area(2);
-        s.area(2.2,3.2 );
-        s.area(1,2);
 
+public class q9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of employees: ");
+        int n = sc.nextInt();
+
+        Employee[] e = new Employee[n];
+
+        for (int i = 0; i < n; i++) {
+            e[i] = new Employee();
+            System.out.print("Enter eno: ");
+            e[i].eno = sc.nextInt();
+            System.out.print("Enter ename: ");
+            e[i].ename = sc.next();
+            System.out.print("Enter esalary: ");
+            e[i].esalary = sc.nextDouble();
+        }
+
+        System.out.print("Enter eno to search: ");
+        int key = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            if (e[i].eno == key) {
+                System.out.println(e[i].eno + " " + e[i].ename + " " + e[i].esalary);
+                return;
+            }
+        }
+
+        System.out.println("Employee not found");
     }
 }
-    
-
