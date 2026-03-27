@@ -4,7 +4,7 @@ public class q21{
     public static void main(String args[])
     {
         try{
-        Scanner sc=new Scanner(System.in);
+        Scanner sc =new Scanner(System.in);
         System.out.println("Enter text:");
         String text=sc.nextLine();
         FileWriter fw=new FileWriter("file1.txt");
